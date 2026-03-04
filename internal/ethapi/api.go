@@ -45,7 +45,7 @@ import (
 	"github.com/ethereum/go-ethereum/params"
 	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/ethereum/go-ethereum/rpc"
-	"github.com/tyler-smith/go-bip39"
+	"github.com/cosmos/go-bip39"
 )
 
 // EthereumAPI provides an API to access Ethereum related information.
