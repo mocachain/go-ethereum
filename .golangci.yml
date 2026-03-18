@@ -12,7 +12,6 @@ run:
 linters:
   disable-all: true
   enable:
-    - deadcode
     - goconst
     - goimports
     - gosimple
@@ -20,7 +19,6 @@ linters:
     - ineffassign
     - misspell
     - unconvert
-    - varcheck
     - typecheck
     - unused
     - staticcheck
@@ -55,7 +53,6 @@ issues:
   exclude-rules:
     - path: crypto/bn256/cloudflare/optate.go
       linters:
-        - deadcode
         - staticcheck
     - path: internal/build/pgp.go
       text: 'SA1019: package golang.org/x/crypto/openpgp is deprecated'
