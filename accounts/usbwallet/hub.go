@@ -71,12 +71,28 @@ type Hub struct {
 // NewLedgerHub creates a new hardware wallet manager for Ledger devices.
 func NewLedgerHub() (*Hub, error) {
 	return newHub(LedgerScheme, 0x2c97, []uint16{
+		// Device definitions taken from
+		// https://github.com/LedgerHQ/ledger-live/blob/595cb73b7e6622dbbcfc11867082ddc886f1bf01/libs/ledgerjs/packages/devices/src/index.ts
+
 		// Original product IDs
 		0x0000, /* Ledger Blue */
 		0x0001, /* Ledger Nano S */
 		0x0004, /* Ledger Nano X */
+		0x0005, /* Ledger Nano S Plus */
+		0x0006, /* Ledger Nano FTS */
+		0x0007, /* Ledger Flex */
+		0x0008, /* Ledger Nano Gen5 */
 
-		// Upcoming product IDs: https://www.ledger.com/2019/05/17/windows-10-update-sunsetting-u2f-tunnel-transport-for-ledger-devices/
+		// WebUSB product IDs
+		0x0000, /* WebUSB Ledger Blue */
+		0x1000, /* WebUSB Ledger Nano S */
+		0x4000, /* WebUSB Ledger Nano X */
+		0x5000, /* WebUSB Ledger Nano S Plus */
+		0x6000, /* WebUSB Ledger Nano FTS */
+		0x7000, /* WebUSB Ledger Flex */
+		0x8000, /* WebUSB Ledger Nano Gen5 */
+
+		// Legacy HID + U2F + WebUSB (older firmware, kept for backward compatibility)
 		0x0015, /* HID + U2F + WebUSB Ledger Blue */
 		0x1015, /* HID + U2F + WebUSB Ledger Nano S */
 		0x4015, /* HID + U2F + WebUSB Ledger Nano X */
